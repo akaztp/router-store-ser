@@ -1,0 +1,31 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "project": {
+        "name": "test-exam-maker"
+    },
+    "apps": [
+        {
+            "root": "lib",
+            "assets": [],
+            "index": "",
+            "main": "",
+            "polyfills": "../polyfills.ts",
+            "test": "../test.ts",
+            "testTsconfig": "../tsconfig.json",
+            "prefix": "",
+            "styles": [],
+            "scripts": []
+        }
+    ],
+    "lint": [
+        {
+            "project": "tsconfig.json",
+            "exclude": "**/node_modules/**"
+        }
+    ],
+    "test": {
+        "karma": {
+            "config": "./karma.conf.js"
+        }
+    }
+}
