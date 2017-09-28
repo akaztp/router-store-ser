@@ -1,6 +1,6 @@
 {
     "name": "router-store-ser",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "An extension to @ngrx/router-store providing router serialization and a navigation action.",
     "main": "index.ts",
     "scripts": {
