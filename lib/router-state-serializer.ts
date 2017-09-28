@@ -84,10 +84,10 @@ export class RouterStateSerializer implements OriginalRouterStateSerializer<Rout
      */
     public findRouteById(state: ActivatedRoute, uid: any): ActivatedRoute
     {
-        if (!state || state.snapshot.data[this.dataProperty] === uid)
+        if (!state || (state.snapshot.data && state.snapshot.data[this.dataProperty] === uid))
             return state;
 
-        return state.children.reduce((prev, s) => {
+        return (state.children || []).reduce((prev, s) => {
             // console.log('findRoutebyId. prev(path), prev(data), s(path), s(data): ',
             //     prev.snapshot.routeConfig.path,
             //     prev.snapshot.data,
@@ -109,13 +109,13 @@ export class RouterStateSerializer implements OriginalRouterStateSerializer<Rout
             return null;
         if (Array.isArray(uid))
         {
-            if (uid.indexOf(node.data[this.dataProperty]) >= 0)
+            if (node.data && uid.indexOf(node.data[this.dataProperty]) >= 0)
                 return node;
         }
-        else if (uid === node.data[this.dataProperty])
+        else if (node.data && uid === node.data[this.dataProperty])
             return node;
 
-            return node.children.reduce((prev, l) =>
+            return (node.children || []).reduce((prev, l) =>
             {
                 return prev || this.findNodeById(l, uid);
         }, null);
