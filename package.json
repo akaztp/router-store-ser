@@ -32,7 +32,7 @@
     "devDependencies": {
         "@angular/common": "^4.4.3",
         "@angular/compiler": "^4.4.3",
-        "@angular/core": "^4.4.4",
+        "@angular/core": "^4.4.3",
         "@angular/platform-browser": "^4.4.3",
         "@angular/platform-browser-dynamic": "^4.4.3",
         "@angular/router": "^4.4.3",
